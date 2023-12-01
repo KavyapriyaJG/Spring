@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Constructor injection for CycleService -->
+    <bean id="cycleService" class="com.automobileServiceStation.springBootApplication.services.CycleService"></bean>
+    <bean id="cycleServiceController" class="com.automobileServiceStation.springBootApplication.controllers.CycleServiceController">
+        <constructor-arg ref="cycleService"/>
+    </bean>
+
+    <!-- Setter injection for CycleService -->
+<!--    <bean id="cycleServiceController"-->
+<!--          class="com.automobileServiceStation.springBootApplication.controllers.CycleServiceController"-->
+<!--          lazy-init="true">-->
+<!--        <property name="cycleService" ref="cycleService"/>-->
+<!--    </bean>-->
+
+</beans>
